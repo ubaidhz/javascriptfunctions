@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Object Scope</title>
+</head>
+<body>
+	<p id="bingo"></p>
+	<script>
+	//Illustration of global and local objects
+	//This also illustrates use of function declaration and function expression
+		//  aGlobal = "This is a global object";
+		//  window.aGlobalB = "This is aGlobalB";
+		// function newFunction(){
+		// 	var aLocal = " A local object";
+		// 	console.log(aGlobal);
+		// 	console.log(aLocal);
+			
+		// 	console.log (aGlobalB);
+		// }
+		// newFunction();
+
+		// var foo = function (a,b){ return a*b};
+		// document.getElementById("demo").innerHTML = foo(5,3);
+		// 
+		// var math = function factorial(n) {
+		// 	    if (n <= 1)
+		// 	      return 1;
+		// 	    return n * factorial(n - 1);
+		// 	    console.log("Success");
+		  
+		// }();
+		// n=9;
+		//Not working factorial();
+		
+//**************************************************************************
+		//If else statements:
+
+		// var luckyNum= 5;
+		// var yourNum= 15;
+		// if (luckyNum === yourNum){
+		// 	alert("Today is your lucky day");
+		// }else {
+		// 	alert("Sorry "+ yourNum + " is the number.");
+		// }
+//**************************************************************************
+		//Ternary operation (condition) ? (success) : (fail);
+		// var luckyNum= 8;
+		// var yourNum =15;
+		// (luckyNum === yourNum) ? alert ( " It is your lucky day") : alert (" Sorry the number is not " + yourNum);
+//**************************************************************************
+		//Illustration of Function Declaration
+		// function functionName(parameters){
+		// 	code to be executed
+		// };
+		// functionName(arguments);
+
+		// var bingoNum= Math.floor((Math.random() * 10) + 1);
+		
+		
+		// function bingoFunction(yourNum) {
+		// 	(yourNum === bingoNum) ? alert ( " It is your lucky day") : alert (" Sorry the number is not " + yourNum);
+		// 	console.log(bingoNum);
+		// };
+
+		// bingoFunction(8);
+//**************************************************************************
+		//Illustration of Function Expression
+		// var variableName = function() {
+			// (yourNum === bingoNum) ? alert ( " It is your lucky day") : alert (" Sorry the number is not " + yourNum);
+			// console.log(bingoNum);
+			//};
+		// };
+
+//**************************************************************************
+
+		luckyBingo();
+
+		function luckyBingo(){
+			var message;
+			var yourNum= 8;
+			var bingoNum= Math.floor((Math.random() * 10) + 1); //Expression, Self-invoking, hoisted
+			(yourNum === bingoNum) ? message = " Its your lucky day": 
+			message ="Sorry try again. The number is " + bingoNum ;
+			console.log(message);
+
+			var getPara = document.getElementById("bingo");
+			getPara.textContent = message;
+
+		}
+
+		//Function Expressions are self-invoking, hoisted because JavaScript puts varaible declarations at the top
+		//Function declarations need external invoking, hence not hoisted. function luckyBingo() needs invoking as luckyBingo(); It is not self invoking
+
+	</script>
+</body>
+</html>
