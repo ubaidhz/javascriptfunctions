@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loops</title>
+	<style>
+		body{
+			font-size: 4em;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="myTitle"></h1>
+	<p id= "listEm"></p>
+	<button onclick= "showDay()">Click Me To Activate</button>
+	
+
+	<script>
+	// ######################FUNCTION DECLARATION ILLUSTRATION################################
+	// myFunction();
+	// 	//This is a global variable that will be used for threading title
+	// 	function myFunction(){
+	// 		var title= document.getElementById("myTitle");
+		
+		
+	// 	// A FOR loop
+	// 		var suburbs = ["Parnell", "Manurewa", "Newmarket", "Henderson"]; //Array declaration
+	// 		var text = ""; //Variable text declaration for usage further down
+	// 		for (var i = 0; i < suburbs.length; i++) { //FOR loop kickstarts on suburbs array. i runs through suburbs.length till i=3 
+	// 			text+= suburbs[i]+ "<br>"; //and spits out the contents of array
+	// 			}
+		
+	// 	title.textContent = "The List:"; //pull myTitle into var title and assigns string The List: 
+	// 	document.getElementById ("listEm").innerHTML = text; //Pull DOM element listEm and assigns the value of text from FOR loop to DOM element with id listEm
+	// }
+	// ##################################ENDS###############################################
+	// ######################FUNCTION EXPRESSION ILLUSTRATION################################
+	
+		//This is a global variable that will be used for threading title
+	// 	var nzSuburbs= function myFunction(){
+	// 		var title= document.getElementById("myTitle");
+		
+		
+	// 	// A FOR loop
+	// 		var suburbs = ["Parnell", "Manurewa", "Newmarket", "Henderson"]; //Array declaration
+	// 		var text = ""; //Variable text declaration for usage further down
+	// 		for (var i = 0; i < suburbs.length; i++) { //FOR loop kickstarts on suburbs array. i runs through suburbs.length till i=3 
+	// 			text+= suburbs[i]+ "<br>"; //and spits out the contents of array
+	// 			}
+		
+	// 	title.textContent = "The List:"; //pull myTitle into var title and assigns string The List: 
+	// 	document.getElementById ("listEm").innerHTML = text; //Pull DOM element listEm and assigns the value of text from FOR loop to DOM element with id listEm
+	// }(); //*******************HOISTING ******************SELF-INVOKING******************
+
+	// ##################################ENDS###############################################
+
+	// ###########################EVENT HANDLER ILLUSTRATION################################
+			//This is a global variable that will be used for threading title
+	// 	function myFunction(){
+	// 		var title= document.getElementById("myTitle");
+		
+		
+	// 	// A FOR loop
+	// 		var suburbs = ["Parnell", "Manurewa", "Newmarket", "Henderson"]; //Array declaration
+	// 		var text = ""; //Variable text declaration for usage further down
+	// 		for (var i = 0; i < suburbs.length; i++) { //FOR loop kickstarts on suburbs array. i runs through suburbs.length till i=3 
+	// 			text+= suburbs[i]+ "<br>"; //and spits out the contents of array
+	// 			}
+		
+	// 	title.textContent = "The List:"; //pull myTitle into var title and assigns string The List: 
+	// 	document.getElementById ("listEm").innerHTML = text; //Pull DOM element listEm and assigns the value of text from FOR loop to DOM element with id listEm
+	// }
+	// ###########################Ends################################
+
+	//A WHILE loop
+	// var title= document.getElementById("myTitle");
+	// var myColors = ["Blue","Red", "Green", "Silver"];
+	// var i=0;
+	// var text = '';
+	// while (myColors[i]){ //Take myColors[i] array as argument and runs the iteration through index i of array. Once index i has reached the end of array, while loop exits . While array myColors has an index i the while loop executes. Index reaches to an end at i= 3 which means while will execute 4 times for i= '0 to '3'
+	// 	text += myColors[i] + "<br>";
+	// 	i++;
+	// }
+	// title.textContent = "The List:";
+	// document.getElementById ("listEm").innerHTML = text;
+
+	// Switch statement
+	
+			// ###########################SWITCH CASE ILLUSTRATION################################
+		function showDay(){
+			var day; // local variable declaration for the scope of function showDay()
+			switch (new Date().getDay()){ //getDay is a method on Date() object which is create by object constructor "new Date()"
+				case 0: 
+					day= "Sunday";
+					break;
+				case 1: 
+					day= "Monday";
+					break;
+				case 2: 
+					day= "Tuesday";
+					break;
+				case 3: 
+					day= "Wednesday";
+					break;
+				case 4: 
+					day= "Thursday";
+					break;
+				case 5: 
+					day= "Friday";
+					break;
+				case 6: 
+					day= "Saturday";
+					break;
+			}
+			document.getElementById("listEm").innerHTML = day; //Since day is a local variable for the function showDay(), it needs to be placed within the scope of function showDay() hence after switch case
+	};
+			var title= document.getElementById("myTitle");
+			title.textContent= "The Day:"
+			
+			// ###########################ENDS################################
+
+	</script>
+</body>
+</html>
